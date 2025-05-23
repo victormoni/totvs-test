@@ -1,0 +1,88 @@
+:host {
+  display: inline-block;
+}
+
+.switch-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none; // impede o foco visual padrão do navegador
+
+  &:focus-visible {
+    outline: 3px solid black; // ✅ borda preta grossa
+    outline-offset: 3px;
+  }
+}
+
+.track {
+  width: var(--track-width, 3rem);
+  height: var(--track-height, 1rem);
+  background-color: var(--track-unchecked);
+
+  border-radius: 6px; // 👉 menos arredondado
+  transition: background-color 0.2s;
+
+  &.checked {
+    background-color: var(--track-checked);
+  }
+
+  &.disabled {
+    background-color: var(--track-unchecked); // mesmo valor em disabled
+  }
+}
+
+.key {
+  width: var(--key-size, 1.5rem); // 24px
+  height: var(--key-size, 1.5rem); // 24px
+  background-color: var(--color-unchecked);
+  border: var(--border-width-key, 2px) solid var(--border-color);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  transition: left 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Estado checked
+  &.checked {
+    left: calc(var(--track-width, 3rem) - var(--key-size, 1.5rem));
+    background-color: var(--color-checked);
+    border-color: transparent;
+  }
+
+  // Estado hover (não-disabled)
+  &:hover:not(.disabled) {
+    background-color: var(--color-unchecked-hover);
+    border-color: var(--color-checked-hover);
+
+    &.checked {
+      background-color: var(--color-checked-hover);
+    }
+  }
+
+  // Estado desabilitado
+  &.disabled {
+    cursor: not-allowed;
+
+    &.checked {
+      background-color: var(--color-checked-disabled);
+      border-color: transparent;
+    }
+
+    &:not(.checked) {
+      background-color: var(--color-unchecked-disabled);
+      border-color: var(--color-checked-disabled);
+    }
+  }
+}
+.icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--color-unchecked);
+  mask: url("/assets/icons/check.svg") no-repeat center;
+  mask-size: contain;
+}

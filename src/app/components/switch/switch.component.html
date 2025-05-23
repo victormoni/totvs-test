@@ -1,0 +1,17 @@
+<label
+  class="switch-container"
+  role="switch"
+  tabindex="0"
+  [attr.aria-label]="label"
+  [attr.aria-checked]="checked"
+  [attr.aria-disabled]="disabled"
+  (keydown.space)="toggle()"
+  (keydown.enter)="toggle()"
+  (click)="toggle()"
+>
+  <div class="track" [class.checked]="checked">
+    <div class="key" [class.checked]="checked">
+      <span *ngIf="checked" class="icon"></span>
+    </div>
+  </div>
+</label>

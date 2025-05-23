@@ -1,0 +1,17 @@
+<div class="row">
+  <app-select
+    class="select"
+    [(value)]="selectedOption"
+    [placeholder]="'Choose an option'"
+    [options]="options"
+    [hasError]="hasError"
+    [disabled]="isDisabled"
+    (valueChange)="onSelectChange($event)"
+  ></app-select>
+  <app-switch
+    class="switch"
+    [(ngModel)]="ativo"
+    label="Ligar sistema"
+    (toggled)="onToggle($event)"
+  ></app-switch>
+</div>

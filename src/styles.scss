@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  // Switch
+  --color-unchecked: #f9fafb;
+  --color-unchecked-hover: #eef2ff;
+  --color-unchecked-disabled: #e5e7eb;
+
+  --color-checked: #1e1b4b;
+  --color-checked-hover: #6366f1;
+  --color-checked-disabled: #cbd5e1;
+
+  --track-unchecked: #e5e7eb;
+  --track-checked: #312e81;
+
+  --border-color: #1f2937;
+  --outline-color-focused: #1e1b4b;
+
+  --border-style-key: solid;
+  --border-width-key: 2px;
+  --border-radius-key: 100%;
+  --outline-width: 3px;
+  --outline-offset: 2px;
+  --key-size: 1.5rem;
+  --track-height: 1rem;
+  --track-width: 3rem;
+
+  //Select
+  --font-family: "Inter", sans-serif;
+  --font-size: 1rem;
+  --text-color-empty: #9ca3af;
+  --text-color: #111827;
+
+  --color: #374151;
+  --background: #fff;
+  --color-hover: #6366f1;
+  --background-hover: #eef2ff;
+  --color-error: #dc2626;
+  --color-disabled: #9ca3af;
+  --background-disabled: #e5e7eb;
+
+  --outline-color-focused: #1e1b4b;
+}

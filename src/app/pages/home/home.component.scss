@@ -1,0 +1,30 @@
+.row {
+  display: flex;
+  flex-wrap: wrap; // 🔁 permite quebrar linha em telas pequenas
+  gap: 1rem; // 🧊 espaçamento entre switch e select
+  align-items: center;
+  width: 100%;
+}
+
+.switch {
+  flex: 0 0 auto; // mantém tamanho natural
+}
+
+.select {
+  flex: 1 1 250px; // cresce com o layout, mas tem base de 250px
+  min-width: 200px;
+  max-width: 24rem; // ⬅ limite de 24rem = 384px
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .switch,
+  .select {
+    flex: 1 1 100%;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

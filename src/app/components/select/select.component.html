@@ -1,0 +1,19 @@
+<div class="select-wrapper">
+  <select
+    id="select"
+    [disabled]="disabled"
+    [ngClass]="{ error: hasError, placeholder: !value }"
+    [value]="value"
+    (change)="onChange($event)"
+  >
+    <option value="" disabled hidden>{{ placeholder }}</option>
+
+    <option *ngIf="hasError" disabled class="error-option">
+      ⚠ Campo obrigatório
+    </option>
+
+    <option *ngFor="let option of options" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+</div>
